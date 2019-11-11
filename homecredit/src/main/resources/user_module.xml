@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="user_module">
+<!--    <typeAlias alias="TerminalVO"
+    type="com.beps.net.entity.Terminal"/> -->
+    
+ 
+   <resultMap id="userModuleMap" class="com.hc.entity.UserModuleParam">
+        <result property="moduleName" />
+        <result property="moduleOrder" />
+  </resultMap>
+
+    <select id="selectListUserModule" resultMap="userModuleMap" parameterClass="java.lang.String">
+        SELECT 
+            u."moduleName" as moduleName,
+            u."moduleOrder" as moduleOrder
+        FROM user_module u
+        WHERE u."userID" = #id#
+        AND u."activeStatus" IS TRUE
+    </select>
+
+</sqlMap>
