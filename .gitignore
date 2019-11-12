@@ -1,2 +1,4 @@
 
 homecredit/target/*
+/homecredit/entity-data/target/
+/homecredit/entity-domain/target/

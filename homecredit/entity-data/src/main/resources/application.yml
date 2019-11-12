@@ -1,0 +1,10 @@
+spring:
+  datasource:
+    platform: postgres
+    url: jdbc:postgresql://localhost:5432/home_credit
+    username: postgres
+    password: " "
+    driverClassName: org.postgresql.Driver
+    validationQuery: Select 1
+#server:
+##    port: 9090
